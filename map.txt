@@ -1,0 +1,25 @@
+CREATE (BotanischerGarten:Station {name:'Botanischer Garten'})
+CREATE (FeuerbachStrasse:Station {name:'Feuerbach Strasse'})
+CREATE (Friedenau:Station {name:'Friedenau'})
+CREATE (InsbruckerPlatz:Station {name:'Insbrucker Platz'})
+CREATE (SundgauerStrasse:Station  {name:'Sundgauer Strasse'})
+CREATE (LichterfeldeWest:Station  {name:'Lichterfelde West'})
+CREATE (RathausSteglitz:Station {name:'Rathaus Steglitz'})
+CREATE (Schlossstrasse:Station {name:'Schlossstrasse'})
+CREATE (Schoeneberg:Station {name:'Schnöneberg'})
+
+CREATE
+  (SundgauerStrasse)-[:s1]->(LichterfeldeWest),
+  (LichterfeldeWest)-[:s1]->(BotanischerGarten),
+  (BotanischerGarten)-[:s1]->(RathausSteglitz),
+  (RathausSteglitz)-[:s1]->(FeuerbachStrasse),
+  (FeuerbachStrasse)-[:s1]->(Friedenau),
+  (Friedenau)-[:s1]->(Schoeneberg),
+
+  (RathausSteglitz)-[:u9]->(Schlossstrasse),
+
+  (Schoeneberg)-[:s41]->(InsbruckerPlatz), 
+  (Schoeneberg)-[:s46]->(InsbruckerPlatz) 
+
+   
+
